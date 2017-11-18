@@ -1,0 +1,121 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Free to Learn</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/shards.min.css">
+    <link rel="stylesheet" href="css/shards-demo.css?v=1.1.0">
+</head>
+
+<body>
+    <!-- <div class="loader">
+        <div class="page-loader"></div>
+    </div> -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <img src="images/demo/shards-logo.svg" alt="Example Navbar 1" class="mr-2" height="30px">
+        <a class="navbar-brand" href="#">Free to Learn</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown-1" aria-controls="navbarNavDropdown-1" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown-1">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Content -->
+    <div>
+        <video autoplay="" width="100%"></video>
+        <button id="getUserMediaButton">Get User Media</button>
+    </div>
+
+    <div>
+        <canvas id="takePhotoCanvas"></canvas>
+        <button id="takePhotoButton" disabled="">Take Photo</button>
+    </div>
+
+    <!-- JavaScript -->
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10&appId=1662270373824826";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <script src="js/shards.min.js"></script>
+    <script src="js/demo.min.js"></script>
+    <script>
+        var imageCapture;
+
+        function onGetUserMediaButtonClick() {
+            navigator.mediaDevices.getUserMedia({
+                    video: true
+                })
+                .then(mediaStream => {
+                    document.querySelector('video').srcObject = mediaStream;
+
+                    const track = mediaStream.getVideoTracks()[0];
+                    imageCapture = new ImageCapture(track);
+                })
+                .catch(error => ChromeSamples.log(error));
+        }
+
+        function onTakePhotoButtonClick() {
+            imageCapture.takePhoto()
+                .then(blob => createImageBitmap(blob))
+                .then(imageBitmap => {
+                    const canvas = document.querySelector('#takePhotoCanvas');
+                    drawCanvas(canvas, imageBitmap);
+                })
+                .catch(error => ChromeSamples.log(error));
+        }
+
+        /* Utils */
+
+        function drawCanvas(canvas, img) {
+            canvas.width = getComputedStyle(canvas).width.split('px')[0];
+            canvas.height = getComputedStyle(canvas).height.split('px')[0];
+            let ratio = Math.min(canvas.width / img.width, canvas.height / img.height);
+            let x = (canvas.width - img.width * ratio) / 2;
+            let y = (canvas.height - img.height * ratio) / 2;
+            canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
+            canvas.getContext('2d').drawImage(img, 0, 0, img.width, img.height,
+                x, y, img.width * ratio, img.height * ratio);
+        }
+
+        document.querySelector('video').addEventListener('play', function() {
+            document.querySelector('#takePhotoButton').disabled = false;
+        });
+
+
+        document.querySelector('#getUserMediaButton').addEventListener('click', onGetUserMediaButtonClick);
+        document.querySelector('#takePhotoButton').addEventListener('click', onTakePhotoButtonClick);
+    </script>
+</body>
+
+</html>

@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/shards.min.css">
     <link rel="stylesheet" href="css/shards-demo.css?v=1.1.0">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon.png">
 </head>
 
 <body>
@@ -78,6 +80,22 @@
             <button id="retakePhotoButton" type="button" class="btn btn-pill btn-outline-info d-none"><i class="fa fa-undo mr-1"></i></button>
             <button id="acceptPhotoButton" type="button" class="btn btn-pill btn-success d-none"><i class="fa fa-check mr-1"></i></button>
         </div>
+        <div class="registrationForm d-none container">
+
+            <div id="searchStudent" class="row-fluid">
+                <input style="width: 100%" class="typeahead form-control col" type="text" placeholder="Zoek een leerling">
+            </div>
+
+            <div class="row-fluid">
+                <!-- Normal Custom Select -->
+                <select class="custom-select col" id="CompetentionSelect">
+                <option selected>Selecteer een competentie</option>
+            </select>
+            </div>
+
+            <div class="row-fluid" id="SkillCheckboxes">
+            </div>
+        </div>
     </div>
 
     <!-- JavaScript -->
@@ -99,6 +117,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
     <script src="js/shards.min.js"></script>
     <script src="js/demo.min.js"></script>
+    <script src="node_modules/typeahead.js/dist/bloodhound.js"></script>
+    <script src="node_modules/typeahead.js/dist/typeahead.bundle.js"></script>
+    <script src="node_modules/typeahead.js/dist/typeahead.jquery.js"></script>
+    <script src="js/typeahead.js"></script>
 
     <script>
         var imageCapture;
@@ -155,15 +177,15 @@
         }
 
         function onAcceptPhotoButtonClick() {
-            // document.querySelector('#takePhotoCanvas').style.height = '200px';
-            document.querySelector('#takePhotoCanvas').style.width = '533px';
             document.querySelector('#takePhotoCanvas').style.width = '533px';
 
+            document.querySelector('#retakePhotoButton').classList.add('d-none');
+            document.querySelector('#acceptPhotoButton').classList.add('d-none');
 
+            document.querySelector('.registrationForm').classList.remove('d-none');
         }
 
         /* Utils */
-
         function drawCanvas(canvas, img) {
             canvas.width = getComputedStyle(canvas).width.split('px')[0];
             canvas.height = getComputedStyle(canvas).height.split('px')[0];
@@ -179,6 +201,96 @@
             document.querySelector('#takePhotoButton').disabled = false;
         });
 
+        let categories = [{
+                name: 'Burgerschap',
+                skills: [
+
+                ]
+            }, {
+                name: 'Omgaan met informatie',
+                skills: [
+
+                ]
+            }, {
+                name: 'Communiceren',
+                skills: [
+
+                ]
+            }, {
+                name: 'Digitale geletterdheid',
+                skills: [
+
+                ]
+            }, {
+                name: 'Probleemoplossend vermogen',
+                skills: [
+
+                ]
+            }, {
+                name: 'Samenwerken',
+                skills: [
+
+                ]
+            }, {
+                name: 'Creativiteit',
+                skills: []
+            }, {
+                name: 'Ondernemendheid',
+                skills: [{
+                    name: 'Mogelijkheden zien'
+                }, {
+                    name: 'Initiatief nemen'
+                }, {
+                    name: 'Analyseren plannen en organiseren'
+                }, {
+                    name: 'Realiseren'
+                }, {
+                    name: 'Leiding geven'
+                }]
+            }, {
+                name: 'Leren leren',
+                skills: [
+
+                ]
+            }, {
+                name: 'Jezelf kennen en accepteren',
+                skills: [
+
+                ]
+            },
+
+        ];
+
+        let CompetentionSelect = document.querySelector('#CompetentionSelect');
+        categories.forEach(category => {
+            let option = document.createElement("option");
+            option.text = category.name;
+            CompetentionSelect.appendChild(option);
+        });
+        CompetentionSelect.addEventListener('click', onCompetentionSelected);
+
+        function onCompetentionSelected() {
+            let selectedCategory = categories.find(i => i.name == CompetentionSelect.value);
+            let skills = selectedCategory.skills;
+
+            let SkillCheckboxes = document.querySelector('#SkillCheckboxes');
+
+            function createCheckbox(skill) {
+                let checkbox = document.createElement('input');
+                let label = document.createElement('span');
+                label.textContent = skill.name;
+                checkbox.appendChild(label);
+                return checkbox;
+            }
+
+            skills.forEach(skill => {
+                SkillCheckboxes.insertAdjacentHTML('afterbegin', `<label style="display: block;" class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input">
+                    <span class="custom-control-indicator"></span>
+                    <span class="custom-control-description">${skill.name}</span>
+                    </label>`);
+            });
+        }
 
         document.querySelector('#takePhotoButton').addEventListener('click', onTakePhotoButtonClick);
         document.querySelector('#loadPhotoModule').addEventListener('click', onLoadPhotoModuleClick);

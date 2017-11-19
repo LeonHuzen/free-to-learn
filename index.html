@@ -32,12 +32,6 @@
                             <span class="sr-only">(current)</span>
                         </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                </li>
             </ul>
         </div>
     </nav>
@@ -141,14 +135,20 @@
 
         function onLoadPhotoModuleClick() {
             if (window.stream) {
-                window.stream.getTracks().forEach(function(track) {
+                window.stream.getTracks().forEach(function (track) {
                     track.stop();
                 });
             }
 
             var constraints = {
                 video: {
+<<<<<<< HEAD
                     facingMode: ("environment")
+=======
+                    facingMode: "environment",
+                    width: { max: 720 },
+                    height: {max: 720 }
+>>>>>>> origin/master
                 }
             };
 
@@ -209,7 +209,7 @@
         }
 
         function onAcceptPhotoButtonClick() {
-            document.querySelector('#takePhotoCanvas').style.width = '533px';
+            document.querySelector('#takePhotoCanvas').style.width = '360px';
 
             document.querySelector('#retakePhotoButton').classList.add('d-none');
             document.querySelector('#acceptPhotoButton').classList.add('d-none');

@@ -628,7 +628,7 @@
             option.text = category.name;
             CompetentionSelect.appendChild(option);
         });
-        CompetentionSelect.addEventListener("click", onCompetentionSelected);
+        CompetentionSelect.addEventListener("change", onCompetentionSelected);
 
         function onCompetentionSelected() {
             let selectedCategory = categories.find(i => i.name == CompetentionSelect.value);

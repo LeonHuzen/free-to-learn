@@ -124,6 +124,7 @@
 
     <script>
         var imageCapture;
+
         function onLoadPhotoModuleClick() {
             navigator.mediaDevices.getUserMedia({
                     video: true
@@ -271,6 +272,7 @@
 
         function onCompetentionSelected() {
             let selectedCategory = categories.find(i => i.name == CompetentionSelect.value);
+            if (selectedCategory === undefined) return;
             let skills = selectedCategory.skills;
 
             let SkillCheckboxes = document.querySelector('#SkillCheckboxes');

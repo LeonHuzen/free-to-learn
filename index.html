@@ -126,9 +126,9 @@
         var imageCapture;
 
         function onLoadPhotoModuleClick() {
-            navigator.mediaDevices.getUserMedia({
-                    video: true
-                })
+            var constraints = { video: { facingMode: ( "environment") } };
+
+            navigator.mediaDevices.getUserMedia(constraints)
                 .then(mediaStream => {
                     document.querySelector('video').srcObject = mediaStream;
 

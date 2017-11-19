@@ -107,7 +107,7 @@
 
 
             <div id="SubmitForm" class="row-fluid">
-                <button id="acceptPhotoButton" type="button" class="btn btn-pill btn-success"><i class="fa fa-check mr-1"></i> Opslaan</button>
+                <button id="submitPostButton" type="button" class="btn btn-pill btn-success"><i class="fa fa-check mr-1"></i> Opslaan</button>
             </div>
         </div>
     </div>
@@ -146,7 +146,11 @@
                 });
             }
 
-            var constraints = { video: { facingMode: ( "environment") } };
+            var constraints = {
+                video: {
+                    facingMode: ("environment")
+                }
+            };
 
             navigator.mediaDevices.getUserMedia(constraints)
                 .then(mediaStream => {
@@ -321,11 +325,27 @@
             });
         }
 
+        function onSubmitPost() {
+            var photo = document.getElementById('takePhotoCanvas');
+            $.ajax('http://10.1.0.119:8080/post/', {
+                type: 'POST',
+                enctype: 'multipart/form-data',
+                data: {
+                    "message": "Wow, vet goed!",
+                    "image": photo.toDataURL(),
+                    "name": "Leon Huzen",
+                    "skills": "Ondernemendheid / Analyseren plannen en organiseren"
+                }
+            });
+        }
+
         document.querySelector('#takePhotoButton').addEventListener('click', onTakePhotoButtonClick);
         document.querySelector('#loadPhotoModule').addEventListener('click', onLoadPhotoModuleClick);
 
         document.querySelector('#retakePhotoButton').addEventListener('click', onRetakePhotoButtonClick);
         document.querySelector('#acceptPhotoButton').addEventListener('click', onAcceptPhotoButtonClick);
+
+        document.querySelector('#submitPostButton').addEventListener('click', onSubmitPost);
     </script>
 
 </body>

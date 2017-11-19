@@ -12,6 +12,17 @@
     <link rel="stylesheet" href="css/shards-demo.css?v=1.1.0">
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" href="icon.png">
+
+    <style>
+    .timeline-card {
+        background-color: #fff;
+        border: none;
+        padding: 10px;
+        border-radius: .625rem;
+        box-shadow: 0 0.46875rem 2.1875rem rgba(90, 97, 105, .1), 0 0.9375rem 1.40625rem rgba(90, 97, 105, .1), 0 0.25rem 0.53125rem rgba(90, 97, 105, .12), 0 0.125rem 0.1875rem rgba(90, 97, 105, .1);
+        margin-bottom: 25px;
+    }
+    </style>
 </head>
 
 <body>
@@ -327,12 +338,15 @@
 
         function loadTimeline(){
 
-            $.getJSON( "http://10.1.0.119:8080/post/", function( data ) {
+            $.getJSON( "https://swgro2017backend.dennisvandalen.com/post/", function( data ) {
                 var items = [];
                 $.each( data, function( key, val ) {
+                    items.push('<div class="timeline-card">');
                     items.push( "<img style=' width: 100px; float: right;' src='" + val.image + "' />" );
                     items.push( "<b>" + val.name + "</b>" );
                     items.push( "<p>" + val.skills + "</p>" );
+                    items.push( "<br style='clear: both;' >" );
+                    items.push('</div>');
                 });
                 
                 $( "<div>", {
@@ -345,7 +359,7 @@
 
         function onSubmitPost() {
             var photo = document.getElementById('takePhotoCanvas');
-            $.ajax('http://10.1.0.119:8080/post/', {
+            $.ajax('https://swgro2017backend.dennisvandalen.com/post/', {
                 type: 'POST',
                 enctype: 'multipart/form-data',
                 data: {

@@ -131,12 +131,18 @@
 
         function onLoadPhotoModuleClick() {
             if (window.stream) {
-                window.stream.getTracks().forEach(function(track) {
+                window.stream.getTracks().forEach(function (track) {
                     track.stop();
                 });
             }
 
-            var constraints = { video: { facingMode: ( "environment") } };
+            var constraints = {
+                video: {
+                    facingMode: "environment",
+                    width: { max: 720 },
+                    height: {max: 720 }
+                }
+            };
 
             navigator.mediaDevices.getUserMedia(constraints)
                 .then(mediaStream => {
@@ -195,7 +201,7 @@
         }
 
         function onAcceptPhotoButtonClick() {
-            document.querySelector('#takePhotoCanvas').style.width = '533px';
+            document.querySelector('#takePhotoCanvas').style.width = '360px';
 
             document.querySelector('#retakePhotoButton').classList.add('d-none');
             document.querySelector('#acceptPhotoButton').classList.add('d-none');

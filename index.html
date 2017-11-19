@@ -75,7 +75,10 @@
         <div>
             <video id="videofeed" autoplay="" width="100%"></video>
             <canvas id="takePhotoCanvas" width="533px" height="400px" class="d-none"></canvas>
-            <button style="margin: 0 auto; display: block;background-color: white; border: 5px solid gray; border-radius: 50%; width: 100px; height: 100px;" id="takePhotoButton" disabled="" type="button" class="">&nbsp;</button>
+
+            <div style="position: fixed; bottom: 0; left: 0; right: 0; background-color: rgba(0,0,0,0.5); padding: 20">
+                <button style="margin: 0 auto; display: block;background-color: white; border: 5px solid gray; border-radius: 50%; width: 100px; height: 100px;" id="takePhotoButton" disabled="" type="button" class="">&nbsp;</button>
+            </div>
 
             <button id="retakePhotoButton" type="button" class="btn btn-pill btn-outline-info d-none"><i class="fa fa-undo mr-1"></i></button>
             <button id="acceptPhotoButton" type="button" class="btn btn-pill btn-success d-none"><i class="fa fa-check mr-1"></i></button>

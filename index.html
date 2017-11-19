@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Free to Learn</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta "name"="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/shards.min.css">
@@ -28,21 +28,27 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown-1">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/">Home
+                    <a class="nav-link" href="#">Home
                             <span class="sr-only">(current)</span>
                         </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
                 </li>
             </ul>
         </div>
     </nav>
     <!-- Page Content -->
-    <div class="container">
+    <div id="main" class="container">
         <!-- Content -->
         <div class="content clearfix">
             <form>
                 <div class="row">
                     <div class="form-group col-md-6">
-                        <input type="text" class="form-control" id="form1-name" placeholder="Zoeken op naam">
+                        <input type="text" class="form-control" id="form1-" name "" placeholder="Zoeken op naam">
                     </div>
                 </div>
             </form>
@@ -80,8 +86,8 @@
         </div>
         <div class="registrationForm d-none container">
 
-            <div id="searchStudent" class="row-fluid">
-                <input style="width: 100%" class="typeahead form-control col" type="text" placeholder="Zoek een leerling">
+            <div class="row-fluid">
+                <input id="searchStudent" style="width: 100%" class="typeahead form-control col" type="text" placeholder="Zoek een leerling">
             </div>
 
             <div class="row-fluid">
@@ -96,7 +102,7 @@
 
 
             <div id="addInformation" class="row-fluid">
-                <textarea id="textarea" class="form-control" rows="3"></textarea>
+                <textarea id="addInformation" class="form-control" rows="3"></textarea>
             </div>
 
 
@@ -116,7 +122,7 @@
             js.id = id;
             js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10&appId=1662270373824826";
             fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
+        }(document, "script", "facebook-jssdk"));
     </script>
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <script async src="https:////platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -134,27 +140,22 @@
         var imageCapture;
 
         function onLoadPhotoModuleClick() {
+            document.getElementById('main').classList.add('d-none');
             if (window.stream) {
-                window.stream.getTracks().forEach(function (track) {
+                window.stream.getTracks().forEach(function(track) {
                     track.stop();
                 });
             }
 
             var constraints = {
                 video: {
-<<<<<<< HEAD
                     facingMode: ("environment")
-=======
-                    facingMode: "environment",
-                    width: { max: 720 },
-                    height: {max: 720 }
->>>>>>> origin/master
                 }
             };
 
             navigator.mediaDevices.getUserMedia(constraints)
                 .then(mediaStream => {
-                    document.querySelector('video').srcObject = mediaStream;
+                    document.querySelector("video").srcObject = mediaStream;
 
                     const tracks = mediaStream.getVideoTracks();
                     const track = tracks[1] ? tracks[1] : tracks[0];
@@ -163,29 +164,29 @@
                 .catch(error => console.log(error));
 
             // View render
-            document.querySelectorAll('.container').forEach(item => {
-                item.className += ' d-none'
+            document.querySelectorAll(".container").forEach(item => {
+                item.classname += " d-none";
             });
-            document.querySelector('.cameracontainer').classList.remove('d-none');
-            document.querySelector('#navbar').classList.remove('mb-4');
-            document.querySelector('html').style.backgroundColor = '#000';
-            document.querySelector('.cameracontainer').style.backgroundColor = '#000';
+            document.querySelector(".cameracontainer").classList.remove("d-none");
+            document.querySelector("#navbar").classList.remove("mb-4");
+            document.querySelector("html").style.backgroundColor = "#000";
+            document.querySelector(".cameracontainer").style.backgroundColor = "#000";
         }
 
         function onTakePhotoButtonClick() {
             imageCapture.takePhoto()
                 .then(blob => createImageBitmap(blob))
                 .then(imageBitmap => {
-                    document.querySelector('#videofeed').classList.add('d-none');
-                    document.querySelector('#takePhotoCanvas').classList.remove('d-none');
-                    document.querySelector('#takePhotoButton').classList.add('d-none');
-                    document.querySelector('#retakePhotoButton').classList.remove('d-none');
-                    document.querySelector('#acceptPhotoButton').classList.remove('d-none');
+                    document.querySelector("#videofeed").classList.add("d-none");
+                    document.querySelector("#takePhotoCanvas").classList.remove("d-none");
+                    document.querySelector("#takePhotoButton").classList.add("d-none");
+                    document.querySelector("#retakePhotoButton").classList.remove("d-none");
+                    document.querySelector("#acceptPhotoButton").classList.remove("d-none");
 
-                    document.querySelector('html').style.backgroundColor = '#fff';
-                    document.querySelector('.cameracontainer').style.backgroundColor = '#fff';
+                    document.querySelector("html").style.backgroundColor = "#fff";
+                    document.querySelector(".cameracontainer").style.backgroundColor = "#fff";
 
-                    const canvas = document.querySelector('#takePhotoCanvas');
+                    const canvas = document.querySelector("#takePhotoCanvas");
                     drawCanvas(canvas, imageBitmap);
 
                     if (window.stream) {
@@ -198,126 +199,434 @@
         }
 
         function onRetakePhotoButtonClick() {
-            document.querySelector('#retakePhotoButton').classList.add('d-none');
-            document.querySelector('#acceptPhotoButton').classList.add('d-none');
-            document.querySelector('#takePhotoButton').classList.remove('d-none');
-            document.querySelector('html').style.backgroundColor = '#000';
-            document.querySelector('.cameracontainer').style.backgroundColor = '#000';
+            document.querySelector("#retakePhotoButton").classList.add("d-none");
+            document.querySelector("#acceptPhotoButton").classList.add("d-none");
+            document.querySelector("#takePhotoButton").classList.remove("d-none");
+            document.querySelector("html").style.backgroundColor = "#000";
+            document.querySelector(".cameracontainer").style.backgroundColor = "#000";
 
-            document.querySelector('#videofeed').classList.remove('d-none');
-            document.querySelector('#takePhotoCanvas').classList.add('d-none');
+            document.querySelector("#videofeed").classList.remove("d-none");
+            document.querySelector("#takePhotoCanvas").classList.add("d-none");
         }
 
         function onAcceptPhotoButtonClick() {
-            document.querySelector('#takePhotoCanvas').style.width = '360px';
+            document.querySelector("#takePhotoCanvas").style.width = "533px";
 
-            document.querySelector('#retakePhotoButton').classList.add('d-none');
-            document.querySelector('#acceptPhotoButton').classList.add('d-none');
+            document.querySelector("#retakePhotoButton").classList.add("d-none");
+            document.querySelector("#acceptPhotoButton").classList.add("d-none");
 
-            document.querySelector('.registrationForm').classList.remove('d-none');
+            document.querySelector(".registrationForm").classList.remove("d-none");
         }
 
         /* Utils */
         function drawCanvas(canvas, img) {
-            canvas.width = getComputedStyle(canvas).width.split('px')[0];
-            canvas.height = getComputedStyle(canvas).height.split('px')[0];
+            canvas.width = getComputedStyle(canvas).width.split("px")[0];
+            canvas.height = getComputedStyle(canvas).height.split("px")[0];
             let ratio = Math.min(canvas.width / img.width, canvas.height / img.height);
             let x = (canvas.width - img.width * ratio) / 2;
             let y = (canvas.height - img.height * ratio) / 2;
-            canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
-            canvas.getContext('2d').drawImage(img, 0, 0, img.width, img.height,
+            canvas.getContext("2d").clearRect(0, 0, canvas.width, canvas.height);
+            canvas.getContext("2d").drawImage(img, 0, 0, img.width, img.height,
                 x, y, img.width * ratio, img.height * ratio);
         }
 
-        document.querySelector('video').addEventListener('play', function() {
-            document.querySelector('#takePhotoButton').disabled = false;
+        document.querySelector("video").addEventListener("play", function() {
+            document.querySelector("#takePhotoButton").disabled = false;
         });
 
         let categories = [{
-                name: 'Burgerschap',
-                skills: [
-
-                ]
-            }, {
-                name: 'Omgaan met informatie',
-                skills: [
-
-                ]
-            }, {
-                name: 'Communiceren',
-                skills: [
-
-                ]
-            }, {
-                name: 'Digitale geletterdheid',
-                skills: [
-
-                ]
-            }, {
-                name: 'Probleemoplossend vermogen',
-                skills: [
-
-                ]
-            }, {
-                name: 'Samenwerken',
-                skills: [
-
-                ]
-            }, {
-                name: 'Creativiteit',
-                skills: []
-            }, {
-                name: 'Ondernemendheid',
-                skills: [{
-                    name: 'Mogelijkheden zien'
+                "name": "Burgerschap",
+                "skills": [{
+                    "name": "Omgaan met anderen",
+                    "options": [{
+                        "name": "Je toont belangstelling en respect voor anderen"
+                    }, {
+                        "name": "Je deelt met anderen"
+                    }]
                 }, {
-                    name: 'Initiatief nemen'
+                    "name": "Omgaan met verschillen",
+                    "options": [{
+                        "name": "Je gaat met allerlei verschillende mensen om"
+                    }, {
+                        "name": "Je past je aan anderen aan"
+                    }]
                 }, {
-                    name: 'Analyseren plannen en organiseren'
+                    "name": "Omgaan met meningsverschillen en conflicten",
+                    "options": [{
+                        "name": "Je luistert naar anderen en vraagt door bij conflicten"
+                    }, {
+                        "name": "Je bemiddelt bij conflicten"
+                    }, {
+                        "name": "Je stelt oplossingen voor"
+                    }, {
+                        "name": "Je stelt oplossingen voor "
+                    }, {
+                        "name": "Je zoekt naar een oplossing die goed is voor iedereen"
+                    }]
                 }, {
-                    name: 'Realiseren'
+                    "name": "Verantwoord handelen",
+                    "options": [{
+                        "name": "Je zorgt voor anderen"
+                    }, {
+                        "name": "Je zorgt voor de natuur"
+                    }, {
+                        "name": "Je zorgt er voor dat anderen/de natuur geen last heeft van je gedrag"
+                    }, {
+                        "name": "Je houdt je aan de regels die je hebt afgesproken"
+                    }]
                 }, {
-                    name: 'Leiding geven'
+                    "name": "Democratisch handelen",
+                    "options": [{
+                        "name": "Je brengt je eigen standpunt naar voren"
+                    }, {
+                        "name": "Je luistert naar het standpunt van anderen"
+                    }, {
+                        "name": "Je toont respect voor andere meningen"
+                    }]
                 }]
             }, {
-                name: 'Leren leren',
-                skills: [
+                "name": "Omgaan met informatie",
+                "skills": [{
+                    "name": "Zoekvraag stellen",
+                    "options": [{
+                        "name": "Je formuleert zoekvragen als er behoefte aan informatie is"
+                    }]
+                }, {
+                    "name": "Zoeken naar bronnen en informatie",
+                    "options": [{
+                        "name": "Je zoekt en vindt efficiënt en zelfstandig informatie"
+                    }, {
+                        "name": "Je beoordeelt of bronnen bruikbaar zijn"
+                    }]
+                }, {
+                    "name": "Informatie beoordelen",
+                    "options": [{
+                        "name": "Je beoordeelt de betrouwbaarheid"
+                    }, {
+                        "name": "Je beoordeelt de bruikbaarheid"
+                    }, {
+                        "name": "Je beoordeelt de volledigheid"
+                    }, {
+                        "name": "je herkent onjuiste en/of misleidende informatie"
+                    }]
+                }, {
+                    "name": "Informatie verwerken",
+                    "options": [{
+                        "name": "Je onderscheidt hoofdzaken van bijzaken"
+                    }, {
+                        "name": "je combineert informatie uit verschillende bronnen"
+                    }, {
+                        "name": "je trekt conclusies"
+                    }, {
+                        "name": "je leest tabellen, grafieken en tekeningen"
+                    }]
+                }, {
+                    "name": "Informatie presenteren",
+                    "options": [{
+                            "name": "Je legt uit hoe betrouwbaar informatie is"
+                        }, {
+                            "name": "Je legt uit hoe volledig informatie is"
+                        }, {
+                            "name": "Je legt uit hoe volledig informatie is"
+                        }
+
+                    ]
+                }, {
+                    "name": "Reflecteren",
+                    "options": [{
+                        "name": "Je beoordeelt jouw eindresultaat"
+                    }, {
+                        "name": "Je beoordeelt het proces"
+                    }]
+                }]
+            }, {
+                "name": "Communiceren",
+                "skills": [{
+                    "name": "Jezelf uitdrukken",
+                    "options": [{
+                        "name": "je verwoord jouw gedachten en ideeën zodanig dat anderen jou begrijpen"
+                    }]
+                }, {
+                    "name": "Luisteren",
+                    "options": [{
+                        "name": "Je luistert naar anderen"
+                    }, {
+                        "name": "Je laat anderen uitpraten"
+                    }, {
+                        "name": "Je stelt open vragen"
+                    }, {
+                        "name": "Je vat samen wat je hebt gehoord"
+                    }, {
+                        "name": "Je controleert of je de ander goed begrepen hebt"
+                    }]
+                }, {
+                    "name": "Lichaamstaal gebruiken en begrijpen",
+                    "options": [{
+                        "name": "Je gebruikt lichaamstaal om een booschap over te brengen"
+                    }, {
+                        "name": "Je gebruikt lichaamstaal als je naar een ander luistert"
+                    }]
+                }, {
+                    "name": "Feedback geven en ontvangen",
+                    "options": [{
+                        "name": "Je benoemt waar iemand goed in is"
+                    }, {
+                        "name": "Je geeft tips op een manier die past bij de anders"
+                    }, {
+                        "name": "Je vraagt anderen om jou tips te geven"
+                    }, {
+                        "name": "Je vraagt anderen te vertellen wat goed gaat"
+                    }]
+                }, {
+                    "name": "Discussiëren",
+                    "options": [{
+                        "name": "Je geeft jouw mijn mening"
+                    }, {
+                        "name": "Je geeft argumenten voor jouw mening"
+                    }, {
+                        "name": "Je neemt deel aan discussies"
+                    }]
+                }]
+            }, {
+                "name": "Digitale geletterdheid",
+                "skills": [{
+                    "name": "Apparaten, software en toepassingen gebruiken",
+                    "options": [{
+                        "name": "Je gebruikt verschillende apparaten, software en/of toepassingen"
+                    }, {
+                        "name": "Je speelt verchillende games"
+                    }, {
+                        "name": "Je probeert nieuwe apparaten, software en toepassingen uit"
+                    }]
+                }, {
+                    "name": "Oriënteren in de digitale wereld",
+                    "options": [{
+                        "name": "Je vindt je weg in websites, games, apparaten en programma's"
+                    }, {
+                        "name": "Je kiest een passend middel"
+                    }, {
+                        "name": "Je past instellingen naar jouw wensen aan"
+                    }]
+                }, {
+
+                    "name": "Content creëren",
+                    "options": [{
+                        "name": "Je gebruikt media en ICT om informatie te delen"
+                    }, {
+                        "name": "Je maakt zelf beelden, video's, presentaties, website 's"
+                    }]
+                }, {
+
+                    "name": "Participeren in sociale netwerken",
+                    "options": [{
+                        "name": "Je onderhoudt via sociale netwerken contact met anderen"
+                    }, {
+                        "name": "Je reageert op berichten van anderen"
+                    }, {
+                        "name": "Je hebt een eigen profiel"
+                    }, {
+                        "name": "Je inspireert en stimuleert anderen"
+                    }]
+                }, {
+
+                    "name": "Reflecteren op het eigen mediagebruik",
+                    "options": [{
+                        "name": "Je maakt bewuste keuzes over hoe lang en hoe vaak je media en ICT gebruikt"
+                    }]
+                }]
+            },
+
+            {
+                "name": "Probleemoplossend vermogen",
+                "skills": [{
+                    "name": "Probleem signaleren",
+                    "options": [{
+                        "name": "Je benoemt of vertelt het wanneer er een probleem is"
+                    }]
+                }, {
+                    "name": "Probleem analyseren",
+                    "options": [{
+                        "name": "Je bedenkt wat er nodig is om een probleem aan te pakken"
+                    }]
+                }, {
+                    "name": "Oplossingen bedenken",
+                    "options": [{
+                        "name": "Je bedenkt verschillende oplossingen"
+                    }, {
+                        "name": "Je betrekt anderen bij het oplossen van een probleem"
+                    }]
+                }, {
+                    "name": "Oplossingen uitproberen",
+                    "options": [{
+                        "name": "Je experimenteert: je probeert oplossingen uit"
+                    }]
+                }, {
+                    "name": "Aanpakken",
+                    "options": [{
+                        "name": "Je pakt het probleem aan"
+                    }, {
+                        "name": "Je zet door"
+                    }, {
+                        "name": "Je vraagt hulp wanneer dat nodig is"
+                    }]
+                }, {
+                    "name": "Oplossingen toelichten",
+                    "options": [{
+                        "name": "Je legt aan anderen de oplossing uit"
+                    }, {
+                        "name": "Je legt uit hoe je het probleem aangepakt hebt"
+                    }]
+                }, {
+                    "name": "Reflecteren",
+                    "options": [{
+                        "name": "Ik denk na over of het wel of geen goede oplossing is"
+                    }, {
+                        "name": "Je dent na over hoe je het probleem aangepakt hebt"
+                    }]
+                }]
+            }
+
+
+
+
+            , {
+                "name": "Samenwerken",
+                "skills": [{
+                        "name": "Actieve bijdrage",
+                        "options": [{
+                            "name": "Je doet actief mee aan een groepsproces"
+                        }, {
+                            "name": "Je oppert ideeën"
+                        }, {
+                            "name": "Je toont initiatief"
+                        }]
+                    }, {
+
+                        "name": "Omgaan met rollen",
+                        "options": [{
+                            "name": "Je neemt verschillende rollen in"
+                        }, {
+                            "name": "Je wisselt van rol wanneer dat nodig is"
+                        }, {
+                            "name": "Je ondersteunt anderen in hun rol"
+                        }]
+                    }, {
+                        "name": "Anderen ondersteunen",
+                        "options": [{
+                            "name": "Je helpt anderen"
+                        }, {
+                            "name": "Je verdeelt taken"
+                        }]
+                    }, {
+                        "name": "Bevorderen van teamgeest",
+                        "options": [{
+                            "name": "Je stimuleert een goede samenwerking"
+                        }, {
+                            "name": "Je moedigt anderen aan"
+                        }]
+                    }, {
+                        "name": "Verantwoordelijkheid nemen voor groepsresultaat",
+
+                        "options": [{
+                            "name": "Je draagt bij aan het groepsresultaat"
+                        }, {
+                            "name": "Je komt afspraken na"
+                        }, {
+                            "name": "Je neemt verantwoordelijkheid voor afronding"
+                        }]
+                    }, {
+
+                        "name": "Samenwerken in diversiteit",
+                        "options": [{
+                            "name": "Je werkt met verschillende anderen samen"
+                        }, {
+                            "name": "Je werkt met verschillende leeftijden samen"
+                        }, {
+                            "name": "Je stimuleert diversiteit in het samenwerken"
+                        }]
+                    }
 
                 ]
             }, {
-                name: 'Jezelf kennen en accepteren',
-                skills: [
+                "name": "Creativiteit"
+            }, {
+                "name": "Ondernemen",
+                skills: [{
+                    name: 'Mogelijkheden zien',
+                    options: [{
+                        name: 'Je ziet en herkent kansen'
+                    }, {
+                        name: 'Je gaat actief op zoek naar kansen'
+                    }]
+                }, {
+                    name: 'Initiatief nemen',
+                    options: [{
+                        name: 'Je neemt initiatief'
+                    }, {
+                        name: 'Je betrekt anderen bij je initiatief'
+                    }]
 
-                ]
-            },
-
+                }, {
+                    name: 'Analyseren plannen en organiseren',
+                    options: [{
+                            name: 'Je analyseert kansen'
+                        },
+                        [{
+                            name: 'Je maakt plannen om jouw doel te bereiken'
+                        }]
+                    ]
+                }, {
+                    name: 'Realiseren',
+                    options: [{
+                        name: 'Je zet ideeën en kansen die je ziet om in acties'
+                    }, {
+                        name: 'Je maakt keuzes en neemt beslissingen'
+                    }, {
+                        name: 'Je zet door'
+                    }]
+                }, {
+                    name: 'Leiding geven',
+                    options: [{
+                        name: 'Je geeft leiding aan anderen'
+                    }, {
+                        name: 'je enthousiasmeert anderen'
+                    }, {
+                        name: 'Je geeft anderen een rol die bij hun past'
+                    }]
+                }]
+            }, {
+                "name": "Leren leren"
+            }, {
+                "name": "Jezelf kennen en accepteren"
+            }
         ];
 
-        let CompetentionSelect = document.querySelector('#CompetentionSelect');
+        let CompetentionSelect = document.querySelector("#CompetentionSelect");
         categories.forEach(category => {
             let option = document.createElement("option");
             option.text = category.name;
             CompetentionSelect.appendChild(option);
         });
-        CompetentionSelect.addEventListener('click', onCompetentionSelected);
+        CompetentionSelect.addEventListener("click", onCompetentionSelected);
 
         function onCompetentionSelected() {
             let selectedCategory = categories.find(i => i.name == CompetentionSelect.value);
             if (selectedCategory === undefined) return;
             let skills = selectedCategory.skills;
 
-            let SkillCheckboxes = document.querySelector('#SkillCheckboxes');
+            let SkillCheckboxes = document.querySelector("#SkillCheckboxes");
+            SkillCheckboxes.innerHTML = '';
 
             function createCheckbox(skill) {
-                let checkbox = document.createElement('input');
-                let label = document.createElement('span');
+                let checkbox = document.createElement("input");
+                let label = document.createElement("span");
                 label.textContent = skill.name;
                 checkbox.appendChild(label);
                 return checkbox;
             }
 
             skills.forEach(skill => {
-                SkillCheckboxes.insertAdjacentHTML('afterbegin', `<label style="display: block;" class="custom-control custom-checkbox">
+                SkillCheckboxes.insertAdjacentHTML("afterbegin", `<label style="display: block;" class="custom-control custom-checkbox">
                     <input type="checkbox" class="custom-control-input">
                     <span class="custom-control-indicator"></span>
                     <span class="custom-control-description">${skill.name}</span>
@@ -326,10 +635,16 @@
         }
 
         function onSubmitPost() {
-            var photo = document.getElementById('takePhotoCanvas');
-            $.ajax('http://10.1.0.119:8080/post/', {
-                type: 'POST',
-                enctype: 'multipart/form-data',
+            let photo = document.getElementById("takePhotoCanvas");
+            let message = document.getElementById("addInformation");
+            let checkedskills = document.getElementById("SkillCheckboxes");
+            let student = document.getElementById("searchStudent");
+
+            debugger;
+
+            $.ajax("http://10.1.0.119:8080/post/", {
+                type: "POST",
+                enctype: "multipart/form-data",
                 data: {
                     "message": "Wow, vet goed!",
                     "image": photo.toDataURL(),
@@ -339,13 +654,13 @@
             });
         }
 
-        document.querySelector('#takePhotoButton').addEventListener('click', onTakePhotoButtonClick);
-        document.querySelector('#loadPhotoModule').addEventListener('click', onLoadPhotoModuleClick);
+        document.querySelector("#takePhotoButton").addEventListener("click", onTakePhotoButtonClick);
+        document.querySelector("#loadPhotoModule").addEventListener("click", onLoadPhotoModuleClick);
 
-        document.querySelector('#retakePhotoButton').addEventListener('click', onRetakePhotoButtonClick);
-        document.querySelector('#acceptPhotoButton').addEventListener('click', onAcceptPhotoButtonClick);
+        document.querySelector("#retakePhotoButton").addEventListener("click", onRetakePhotoButtonClick);
+        document.querySelector("#acceptPhotoButton").addEventListener("click", onAcceptPhotoButtonClick);
 
-        document.querySelector('#submitPostButton').addEventListener('click', onSubmitPost);
+        document.querySelector("#submitPostButton").addEventListener("click", onSubmitPost);
     </script>
 
 </body>

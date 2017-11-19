@@ -25,7 +25,7 @@ var states = ['Tessa Jonker', 'Sandra Meijers', 'Esther Teunissen',
     'Luuk Hartsema', 'Tina Fransen', 'Lies Gehaktbal', 'Henrieke Schuiling', 'Suus Teunissen'
 ];
 
-$('#searchStudent .typeahead').typeahead({
+$('#searchStudent.typeahead').typeahead({
     hint: true,
     highlight: true,
     minLength: 1

@@ -1,0 +1,432 @@
+[{
+        name: 'Burgerschap',
+        skills: [
+            name: 'Omgaan met anderen'
+            Options: {
+                name: 'Je toont belangstelling en respect voor anderen'
+            }; {
+                name: 'Je deelt met anderen'
+            }
+        ]
+        name: 'Omgaan met verschillen'
+        Options: {
+            name: 'Je gaat met allerlei verschillende mensen om'
+        },
+        {
+            name: 'Je past je aan anderen aan}]
+            name: 'Omgaan met meningsverschillen en conflicten'
+            Options: {
+                name: 'Je luistert naar anderen en vraagt door bij conflicten'
+            },
+            {
+                Je bemiddelt bij conflicten '},{'
+                Je stelt oplossingen voor '},{name:'
+                Je stelt oplossingen voor '},{name:'
+                Je zoekt naar een oplossing die goed is voor iedereen '}]
+
+                name: 'Verantwoord handelen'
+                Options: {
+                    name: 'Je zorgt voor anderen'
+                },
+                {
+                    name: 'Je zorgt voor de natuur'
+                },
+                {
+                    name: 'Je zorgt er voor dat anderen/de natuur geen last heeft van je gedrag'
+                },
+                {
+                    name: 'Je houdt je aan de regels die je hebt afgesproken'
+                }]
+
+            name: 'Democratisch handelen'
+            Options: {
+                name: 'Je brengt je eigen standpunt naar voren'
+            },
+            {
+                name: 'Je luistert naar het standpunt van anderen'
+            },
+            {
+                name: 'Je toont respect voor andere meningen'
+            }
+        },
+        {
+            name: 'Omgaan met informatie',
+            skills: [
+                    Name: 'Zoekvraag stellen'
+                    Options: [{
+                        name: 'Je formuleert zoekvragen als er behoefte aan informatie is'
+                    }]
+
+                    Name: 'Zoeken naar bronnen en informatie'
+                    Options: [{
+                        name: 'Je zoekt en vindt efficiënt en zelfstandig informatie'
+                    }, {
+                        name: 'Je beoordeelt of bronnen bruikbaar zijn'
+                    }]
+
+                    Name: 'Informatie beoordelen'
+                    Options: [{
+                            name: 'Je beoordeelt de betrouwbaarheid'
+                        }, {
+                            name: 'Je beoordeelt de bruikbaarheid'
+                        }, {
+                            name: 'Je beoordeelt de volledigheid'
+                        }, {
+                            name: 'je herkent onjuiste en/of misleidende informatie'
+                        }
+
+                        Name: 'Informatie verwerken'
+                        Options: [{
+                            name: 'Je onderscheidt hoofdzaken van bijzaken'
+                        }, {
+                            name: 'je combineert informatie uit verschillende bronnen'
+                        }, {
+                            name: 'je trekt conclusies'
+                        }, {
+                            name: 'je leest tabellen, grafieken en tekeningen'
+                        }]
+
+                        Name: 'Informatie presenteren'
+                        Options: [{
+                                name: 'Je legt uit hoe betrouwbaar informatie is'
+                            }, {
+                                name: 'Je legt uit hoe volledig informatie is'
+                            }, {
+                                name: 'Je legt uit hoe volledig informatie is'
+                            }
+
+                        }, {
+
+                            Name: 'Reflecteren'
+                            Options: [{
+                                name: 'Je beoordeelt jouw eindresultaat'
+                            }, {
+                                name: 'Je beoordeelt het proces'
+                            }]
+                        ] name: 'Communiceren',
+                        skills: [
+                            Name: 'Jezelf uitdrukken'
+                            Options: [{
+                                    name: 'je verwoord jouw gedachten en ideeën zodanig dat anderen jou begrijpen'
+                                }
+
+                                Name: 'Luisteren'
+                                Options: [{
+                                    name: 'Je luistert naar anderen'
+                                }, {
+                                    name: 'Je laat anderen uitpraten'
+                                }, {
+                                    name: 'Je stelt open vragen'
+                                }, {
+                                    name: 'Je vat samen wat je hebt gehoord'
+                                }, {
+                                    name: 'Je controleert of je de ander goed begrepen hebt'
+                                }]
+
+                                Name: 'Lichaamstaal gebruiken en begrijpen'
+                                Options: [{
+                                    name: 'Je gebruikt lichaamstaal om een booschap over te brengen'
+                                }, {
+                                    name: 'Je gebruikt lichaamstaal als je naar een ander luistert'
+                                }]
+
+                                Name: 'Feedback geven en ontvangen'
+                                Options: [{
+                                        name: 'Je benoemt waar iemand goed in is'
+                                    }, {
+                                        name: 'Je geeft tips op een manier die past bij de anders'
+                                    }, {
+                                        name: 'Je vraagt anderen om jou tips te geven'
+                                    }, {
+                                        name: 'Je vraagt anderen te vertellen wat goed gaat'
+                                    }
+
+                                    Name: 'Discussiëren'
+                                    Options: [{
+                                        name: 'Je geeft jouw mijn mening'
+                                    }, {
+                                        name: 'Je geeft argumenten voor jouw mening'
+                                    }, {
+                                        name: 'Je neemt deel aan discussies'
+                                    }]
+                                ]
+                            }, {
+                                name: 'Digitale geletterdheid',
+                                skills: [
+                                        Name: 'Apparaten, software en toepassingen gebruiken'
+                                        Options: [{
+                                            name: 'Je gebruikt verschillende apparaten, software en/of toepassingen'
+                                        }, {
+                                            name: 'Je speelt verchillende games'
+                                        }, {
+                                            name: 'Je probeert nieuwe apparaten, software en toepassingen uit'
+                                        }]
+
+                                        Name: 'Oriënteren in de digitale wereld'
+                                        Options: [{
+                                            name: 'Je vindt je weg in websites, games, apparaten en programma'
+                                            s
+                                        }, {
+                                            Name: 'Je kiest een passend middel'
+                                        }, {
+                                            name: 'Je past instellingen naar jouw wensen aan'
+                                        }]
+
+                                        Name: Content creëren
+                                        Options: [{
+                                            name: 'Je gebruikt media en ICT om informatie te delen'
+                                        }, {
+                                            name: 'Je maakt zelf beelden, video'
+                                            s,
+                                            presentaties,
+                                            website 's'
+                                        }]
+
+                                        Name: 'Participeren in sociale netwerken'
+                                        Options: [{
+                                            name: 'Je onderhoudt via sociale netwerken contact met anderen'
+                                        }, {
+                                            name: 'Je reageert op berichten van anderen'
+                                        }, {
+                                            name: 'Je hebt een eigen profiel'
+                                        }, {
+                                            name: 'Je inspireert en stimuleert anderen'
+                                        }]
+
+                                        Name: 'Reflecteren op het eigen mediagebruik'
+                                        Options: [{
+                                                name: 'Je maakt bewuste keuzes over hoe lang en hoe vaak je media en ICT gebruikt'
+                                            }
+                                        }, {
+                                            name: 'Probleemoplossend vermogen',
+                                            skills: [
+                                                    Name: 'Probleem signaleren'
+                                                    Options: [{
+                                                        name: 'Je benoemt of vertelt het wanneer er een probleem is'
+                                                    }]
+
+                                                    Name: 'Probleem analyseren'
+                                                    Options: [{
+                                                        name: 'Je bedenkt wat er nodig is om een probleem aan te pakken'
+                                                    }]
+
+                                                    Name: 'Oplossingen bedenken'
+
+                                                    Options: [{
+                                                        name: 'Je bedenkt verschillende oplossingen'
+                                                    }, {
+                                                        name: 'Je betrekt anderen bij het oplossen van een probleem'
+                                                    }]
+
+                                                    Name: 'Oplossingen uitproberen'
+                                                    Options: [{
+                                                        name: 'Je experimenteert: je probeert oplossingen uit'
+                                                    }]
+
+                                                    Name: 'Aanpakken'
+                                                    Options: [{
+                                                            name: 'Je pakt het probleem aan'
+                                                        }, {
+                                                            name: 'Je zet door'
+                                                        }, {
+                                                            name: 'Je vraagt hulp wanneer dat nodig is'
+                                                        }
+
+                                                        Name: 'Oplossingen toelichten'
+                                                        Options: [{
+                                                            name: 'Je legt aan anderen de oplossing uit'
+                                                        }, {
+                                                            'Je legt uit hoe je het probleem aangepakt hebt'
+                                                        }]
+
+                                                        Name: 'Reflecteren'
+                                                        Options: [{
+                                                            name: 'Ik denk na over of het wel of geen goede oplossing is'
+                                                        }, {
+                                                            name: 'Je dent na over hoe je het probleem aangepakt hebt'
+                                                        }]
+
+                                                    }, {
+                                                        name: 'Samenwerken',
+                                                        skills: [
+                                                                Name: 'Actieve bijdrage'
+                                                                Options: [{
+                                                                        name: 'Je doet actief mee aan een groepsproces'
+                                                                    }, {
+                                                                        name: 'Je oppert ideeën'
+                                                                    }, {
+                                                                        name: 'Je toont initiatief'
+                                                                    }
+
+                                                                    Name: 'Omgaan met rollen'
+                                                                    Options: [{
+                                                                            name: 'Je neemt verschillende rollen in'
+                                                                        }, {
+                                                                            name: 'Je wisselt van rol wanneer dat nodig is'
+                                                                        }, {
+                                                                            name: 'Je ondersteunt anderen in hun rol'
+                                                                        }
+
+                                                                        Name: 'Anderen ondersteunen'
+                                                                        Options: [{
+                                                                                name: 'Je helpt anderen'
+                                                                            }, {
+                                                                                name: 'Je verdeelt taken'
+                                                                            }
+
+                                                                            Name: 'Bevorderen van teamgeest'
+
+                                                                            Options: [{
+                                                                                name: 'Je stimuleert een goede samenwerking'
+                                                                            }, {
+                                                                                name: 'Je moedigt anderen aan'
+                                                                            }]
+
+                                                                            Name: 'Verantwoordelijkheid nemen voor groepsresultaat'
+
+                                                                            Options: [{
+                                                                                name: 'Je draagt bij aan het groepsresultaat'
+                                                                            }, {
+                                                                                name: 'Je komt afspraken na'
+                                                                            }, {
+                                                                                name: 'Je neemt verantwoordelijkheid voor afronding'
+                                                                            }]
+
+                                                                            Name: 'Samenwerken in diversiteit'
+                                                                            Options: [{
+                                                                                name: 'Je werkt met verschillende anderen samen'
+                                                                            }, {
+                                                                                name: 'Je werkt met verschillende leeftijden samen'
+                                                                            }, {
+                                                                                name: 'Je stimuleert diversiteit in het samenwerken'
+                                                                            }]
+
+                                                                        ]
+                                                                    }, {
+                                                                        name: 'Creativiteit',
+                                                                        skills: [
+                                                                                Name: 'Verbeeldingskracht gebruiken'
+                                                                                Options: [{
+                                                                                        name: 'Je komt met verschillende nieuwe ideeën},{name: '
+                                                                                        Je komt met verassende originele ideeën
+                                                                                    }
+
+                                                                                    Name: 'Open staan'
+                                                                                    Options: [{
+                                                                                            name: 'Je verdiept je in andere mogelijkheden ideeën en/of mogelijkheden'
+                                                                                        }, {
+                                                                                            Je stelt vragen en vraagt door '}
+
+                                                                                            Name: 'Realiseren'
+                                                                                            Options[{
+                                                                                                name: 'Je brengt ideeën in de praktijk'
+                                                                                            }, {
+                                                                                                name: 'Je verbetert jouw idee'
+                                                                                            }, {
+                                                                                                name: 'Je past verschillende creatieve technieken toe'
+                                                                                            }]
+
+                                                                                            Name: 'Omgaan met onzekerheid'
+                                                                                            Options: [{
+                                                                                                name: 'Je volgt jouw idee, ook als het resultaat onzeker is of als anderen er niet direct positief over zijn'
+                                                                                            }]
+
+                                                                                                Name: 'Creatief samenwerken'
+                                                                                            Options: [{
+                                                                                                    name: 'Je deelt jouw ideeën'
+                                                                                                }, {
+                                                                                                    name: 'Je betrekt anderen bij jouw idee en werkt ze samen uit'
+                                                                                                }, {
+                                                                                                    name: 'Je komt samen met anderen tot originele ideeën'
+                                                                                                }, {
+                                                                                                    name: 'Je luistert open naar de ideeën van anderen zonder direct oordeel te geven'
+                                                                                                }
+                                                                                            },
+                                                                                            {
+
+                                                                                                name: 'Ondernemendheid',
+                                                                                                skills: [{
+                                                                                                            name: 'Mogelijkheden zien'
+                                                                                                            Options: [{
+                                                                                                                name: 'Je ziet en herkent kansen'
+                                                                                                            }, {
+                                                                                                                name: 'Je gaat actief op zoek naar kansen'
+                                                                                                            }]
+                                                                                                        }, {
+                                                                                                            name: 'Initiatief nemen'
+                                                                                                            Options: [{
+                                                                                                                name: 'Je neemt initiatief'
+                                                                                                            }, {
+                                                                                                                name: 'Je betrekt anderen bij je initiatief'
+                                                                                                            }]
+
+                                                                                                        }, {
+                                                                                                            name: 'Analyseren plannen en organiseren'
+                                                                                                            Options: [{
+                                                                                                                    name: 'Je analyseert kansen'
+                                                                                                                },
+                                                                                                                [{
+                                                                                                                    name: 'Je maakt plannen om jouw doel te bereiken'
+                                                                                                                }]
+                                                                                                            },
+                                                                                                            {
+                                                                                                                name: 'Realiseren'
+                                                                                                                Options: [{
+                                                                                                                        name: 'Je zet ideeën en kansen die je ziet om in acties'
+                                                                                                                    }, {
+                                                                                                                        name: 'Je maakt keuzes en neemt beslissingen'
+                                                                                                                    }, {
+                                                                                                                        name: 'Je zet door'
+                                                                                                                    }
+                                                                                                                },
+                                                                                                                {
+                                                                                                                    name: 'Leiding geven'
+                                                                                                                    Options: [{
+                                                                                                                            name: 'Je geeft leiding aan anderen'
+                                                                                                                        }, {
+                                                                                                                            name: 'je enthousiasmeert anderen'
+                                                                                                                        }, {
+                                                                                                                            name: 'Je geeft anderen een rol die bij hun past'
+                                                                                                                        }
+                                                                                                                    }]
+                                                                                                            },
+                                                                                                            {
+                                                                                                                name: 'Jezelf kennen en accepteren',
+                                                                                                                skills: [
+                                                                                                                        Name: 'Jezelf Kennen'
+                                                                                                                        Options: [{
+                                                                                                                            name: 'Je houdt rekening met jouw kwaliteit en beperkingen},{name:'
+                                                                                                                            Je onderzoekt kwaliteiten jouw kwaliteiten en beperkingen
+                                                                                                                        }]
+
+                                                                                                                        Name: 'Jezelf Accepteren'
+                                                                                                                        Options: [{
+                                                                                                                            name: 'Je gaat respectvol om met jezelf, ook als iets niet lukt'
+                                                                                                                        }, {
+                                                                                                                            name: 'Je vraagt om hulp'
+                                                                                                                        }, {
+                                                                                                                            name: 'Je accepteert hulp'
+                                                                                                                        }]
+
+                                                                                                                        Name: 'Opkomen voor Jezelf'
+                                                                                                                        Options: [{
+                                                                                                                            name: 'Je communiceert jouw behoeften'
+                                                                                                                        }, {
+                                                                                                                            name: 'Je komt voor jezelf op'
+                                                                                                                        }]
+
+                                                                                                                        Name: 'Omgaan met emoties'
+                                                                                                                        Options: [{
+                                                                                                                                name: 'Je gaat op een manier met je emoties om die voor jouzelf en voor anderen prettig is'
+                                                                                                                            }, {
+                                                                                                                                'Je benoemt jouw emoties en gevoelens'
+                                                                                                                            }
+
+                                                                                                                            Name: 'Persoonlijke verantwoordelijkheid nemen'
+                                                                                                                            Options: [{
+                                                                                                                                name: 'Je zorgt voor jouzelf'
+                                                                                                                            }. {
+                                                                                                                                name: 'Je neemt verantwoordelijkheid voor jouw gedrag'
+                                                                                                                            }, {
+                                                                                                                                name: 'Je handelt in overeenstemming met jouw waarden en normen'
+                                                                                                                            }]

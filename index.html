@@ -86,7 +86,7 @@
             <video id="videofeed" autoplay="" width="100%"></video>
             <canvas id="takePhotoCanvas" width="360px" height="400px" class="d-none"></canvas>
 
-            <div style="position: fixed; bottom: 0; left: 0; right: 0; background-color: rgba(0,0,0,0.5); padding: 20px;">
+            <div id="takePhotoButtonContainer" style="position: fixed; bottom: 0; left: 0; right: 0; background-color: rgba(0,0,0,0.5); padding: 20px;">
                 <button style="margin: 0 auto; display: block;background-color: white; border: 5px solid gray; border-radius: 50%; width: 100px; height: 100px;" id="takePhotoButton" disabled="" type="button" class="">&nbsp;</button>
             </div>
 
@@ -116,7 +116,7 @@
 
 
             <div id="SubmitForm" class="row-fluid">
-                <button id="submitPostButton" type="button" class="btn btn-pill btn-success"><i class="fa fa-check mr-1"></i> Opslaan</button>
+                <button id="submitPostButton" type="button" class="btn btn-pill btn-success btn-lg"><i class="fa fa-check mr-1"></i> Opslaan</button>
             </div>
         </div>
     </div>
@@ -190,6 +190,7 @@
                     document.querySelector('#videofeed').classList.add('d-none');
                     document.querySelector('#takePhotoCanvas').classList.remove('d-none');
                     document.querySelector('#takePhotoButton').classList.add('d-none');
+                    document.querySelector('#takePhotoButtonContainer').classList.add('d-none');
                     document.querySelector('#retakePhotoButton').classList.remove('d-none');
                     document.querySelector('#acceptPhotoButton').classList.remove('d-none');
 
@@ -211,6 +212,7 @@
         function onRetakePhotoButtonClick() {
             document.querySelector('#retakePhotoButton').classList.add('d-none');
             document.querySelector('#acceptPhotoButton').classList.add('d-none');
+            document.querySelector('#takePhotoButtonContainer').classList.remove('d-none');
             document.querySelector('#takePhotoButton').classList.remove('d-none');
             document.querySelector('html').style.backgroundColor = '#000';
             document.querySelector('.cameracontainer').style.backgroundColor = '#000';
@@ -368,6 +370,8 @@
                     "name": "Leon Huzen",
                     "skills": "Ondernemendheid / Analyseren plannen en organiseren"
                 }
+            }).done(function() {
+                window.location = window.location;
             });
         }
 

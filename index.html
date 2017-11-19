@@ -59,6 +59,7 @@
             <div class="col-md-12">
                 <h4>Observatie toevoegen</h4>
             </div>
+
             <div class="col-md-9 ml-auto mr-auto d-flex justify-content-around buttons-wrapper">
                 <button id="loadPhotoModule" type="button" class="btn btn-pill btn-success"><i class="fa fa-camera mr-1"></i> Foto </button>
                 <button type="button" class="btn btn-pill btn-success"><i class="fa fa-font mr-1"></i> Tekst </button>
@@ -129,6 +130,12 @@
         var imageCapture;
 
         function onLoadPhotoModuleClick() {
+            if (window.stream) {
+                window.stream.getTracks().forEach(function(track) {
+                    track.stop();
+                });
+            }
+
             var constraints = { video: { facingMode: ( "environment") } };
 
             navigator.mediaDevices.getUserMedia(constraints)
@@ -166,6 +173,12 @@
 
                     const canvas = document.querySelector('#takePhotoCanvas');
                     drawCanvas(canvas, imageBitmap);
+
+                    if (window.stream) {
+                        window.stream.getTracks().forEach(function(track) {
+                            track.stop();
+                        });
+                    }
                 })
                 .catch(error => ChromeSamples.log(error));
         }

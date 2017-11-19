@@ -61,6 +61,10 @@
 
             <div class="col-md-12">
                 <h4>Timeline</h4>
+
+                <div id="timeline">
+
+                </div>
             </div>
 
         </div>
@@ -142,13 +146,9 @@
 
             var constraints = {
                 video: {
-<<<<<<< HEAD
-                    facingMode: ("environment")
-=======
                     facingMode: "environment",
                     width: { max: 720 },
                     height: {max: 720 }
->>>>>>> origin/master
                 }
             };
 
@@ -324,6 +324,24 @@
                     </label>`);
             });
         }
+
+        function loadTimeline(){
+
+            $.getJSON( "http://10.1.0.119:8080/post/", function( data ) {
+                var items = [];
+                $.each( data, function( key, val ) {
+                    items.push( "<img style=' width: 100px; float: right;' src='" + val.image + "' />" );
+                    items.push( "<b>" + val.name + "</b>" );
+                    items.push( "<p>" + val.skills + "</p>" );
+                });
+                
+                $( "<div>", {
+                    html: items.join( "" )
+                }).appendTo( "#timeline" );
+                });
+        }
+
+        loadTimeline();
 
         function onSubmitPost() {
             var photo = document.getElementById('takePhotoCanvas');

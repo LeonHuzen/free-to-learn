@@ -132,7 +132,8 @@
                 .then(mediaStream => {
                     document.querySelector('video').srcObject = mediaStream;
 
-                    const track = mediaStream.getVideoTracks()[0];
+                    const tracks = mediaStream.getVideoTracks();
+                    const track = tracks[1] ? tracks[1] : tracks[0];
                     imageCapture = new ImageCapture(track);
                 })
                 .catch(error => console.log(error));
